@@ -1,0 +1,23 @@
+TITANIC SURVIVAL PREDICTION - RESULTS SUMMARY
+==================================================
+
+Logistic Regression:
+  Accuracy:  0.838
+  Precision: 0.803
+  Recall:    0.768
+  F1 Score:  0.785
+
+Random Forest:
+  Accuracy:  0.816
+  Precision: 0.810
+  Recall:    0.681
+  F1 Score:  0.740
+
+Best model: Logistic Regression
+
+Top 5 most important features (Random Forest):
+  Title_Mr: 0.191
+  Sex: 0.189
+  Fare: 0.132
+  Age: 0.093
+  Pclass: 0.079
