@@ -58,44 +58,6 @@ which favors a simpler model over a more complex one.
    confusion matrix (visualizing false positives/negatives) and a
    feature importance chart (which factors mattered most).
 
-## How to talk about this in an interview
-
-If asked "walk me through a project you've built," here's a structure
-that shows real understanding rather than a memorized script:
-
-> "I worked with the Titanic dataset — 891 passengers with fields like
-> class, age, and fare. The data had real gaps: age was missing for
-> about 20% of passengers, and cabin was missing for over 75%. I handled
-> those differently — imputing age using the median *within each ticket
-> class* rather than a single overall average, since 1st class
-> passengers skewed older, and turning the cabin field into a simple
-> 'do we know it or not' flag instead of dropping it, since even that
-> was informative.
->
-> For features, I engineered a few new ones — family size, and a title
-> extracted from each passenger's name, like Mr., Mrs., or Master. —
-> since those carried more signal than the raw fields.
->
-> I trained two models, Logistic Regression and Random Forest, and
-> compared them on accuracy, precision, recall, and F1 rather than just
-> accuracy alone, since with an imbalanced outcome accuracy alone can be
-> misleading. Logistic Regression ended up performing slightly better,
-> which made sense given the dataset's size and fairly linear
-> relationships — for example, being female or in 1st class strongly
-> increased survival odds."
-
-Be ready for natural follow-ups:
-- *"Why precision and recall, not just accuracy?"* → Accuracy can look
-  good even if the model just predicts the majority class every time.
-  Precision/recall show whether it's actually distinguishing the two
-  outcomes.
-- *"Why scale features for Logistic Regression but not Random Forest?"*
-  → Logistic Regression is sensitive to feature magnitude (Fare ranges
-  into the hundreds while Age doesn't); tree-based models split on
-  thresholds and aren't affected by scale.
-- *"What would you do next?"* → Try cross-validation instead of a
-  single split for a more reliable estimate, and try hyperparameter
-  tuning on the Random Forest.
 
 ## Files
 
